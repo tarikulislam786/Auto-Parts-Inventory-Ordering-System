@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: auto_parts_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+  backend:
+    build: ./backend
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASS=example
+      - DB_NAME=auto_parts_db
+      - JWT_SECRET=supersecret_docker
+      - FRONTEND_URL=http://localhost:3000
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:4000/api
+    depends_on:
+      - backend
+
+volumes:
+  dbdata:

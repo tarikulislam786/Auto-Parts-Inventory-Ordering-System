@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "c64bc31f-ddb8-47b4-a34a-450e9259faf9",
+		"name": "auto parts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5486196",
+		"_collection_link": "https://tarikul-dev.postman.co/workspace/tarikul-dev~04ef86eb-6e70-49d9-88f6-a7df8d3fd828/collection/5486196-c64bc31f-ddb8-47b4-a34a-450e9259faf9?action=share&source=collection_link&creator=5486196"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the JSON response\r",
+							"let response = pm.response.json();\r",
+							"\r",
+							"// Assuming your API returns { token: \"<JWT>\" } or { accessToken: \"<JWT>\" }\r",
+							"if (response.token) {\r",
+							"    pm.environment.set(\"token\", response.token);\r",
+							"}\r",
+							"else if (response.accessToken) {\r",
+							"    pm.environment.set(\"token\", response.accessToken);\r",
+							"}\r",
+							"\r",
+							"console.log(\"✅ Token saved:\", pm.environment.get(\"token\"));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@auto.com\",\r\n    \"password\":\"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Part",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "tesss",
+							"type": "text"
+						},
+						{
+							"key": "brand",
+							"value": "Perkins",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "320",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Brakes",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Asus/OneDrive/Desktop/ignition1.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/parts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"parts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List All Parts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/parts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"parts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Part Derails By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/parts/31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"parts",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Existing Part",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Disc Brake",
+							"type": "text"
+						},
+						{
+							"key": "brand",
+							"value": "Mandofa",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Brakes",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Asus/OneDrive/Desktop/96014ef55824433e796ed32604bdc652.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/parts/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"parts",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parts Search Pagination With Filtering",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/parts?q=spark&page=1&limit=10&category=Ignition&minPrice=5&maxPrice=320",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"parts"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "spark"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "category",
+							"value": "Ignition"
+						},
+						{
+							"key": "minPrice",
+							"value": "5"
+						},
+						{
+							"key": "maxPrice",
+							"value": "320"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete A Part",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/parts/33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"parts",
+						"33"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"yeamin22\",\r\n    \"email\": \"yeamin22@auto.com\",\r\n    \"password\":\"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

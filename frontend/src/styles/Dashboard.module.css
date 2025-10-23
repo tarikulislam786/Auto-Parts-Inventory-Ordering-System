@@ -1,0 +1,406 @@
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logoutButton {
+    padding: 0.5rem 1rem;
+    background-color: #d93025;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .logoutButton:hover {
+    background-color: #b1271b;
+  }
+  
+  .stats {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+  }
+
+
+.formActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.addButton {
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cancelButton {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cancelButton:hover {
+  background-color: #bbb;
+}
+  
+  .partsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .partCard {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: 250px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .partImage {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+  
+  .partInfo {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .partActions button {
+    margin: 0 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .partActions button:first-child {
+    background-color: #fbbc05;
+    color: #fff;
+  }
+  
+  .partActions button:first-child:hover {
+    background-color: #e2a500;
+  }
+  
+  .partActions button:last-child {
+    background-color: #d93025;
+    color: #fff;
+  }
+  
+  .partActions button:last-child:hover {
+    background-color: #b1271b;
+  }
+
+  
+  .formWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+  }
+  
+/* Form wrapper for row */
+
+  
+  /* Left side inputs */
+  .formCol {
+    flex: 1 1 45%; /* roughly half width */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Right side image preview */
+  .previewCol {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    background-color: #fafafa;
+    padding: 10px;
+    width: 250px;
+  }
+  
+  /* Actual preview image */
+
+  
+  /* Text when no preview */
+  .noPreview {
+    font-style: italic;
+    color: #888;
+    text-align: center;
+  }
+  
+  /* Buttons */
+  /* Form row wrapper */
+.formRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* 6-column layout: half width */
+  .col6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Image preview styling */
+  .previewContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    min-height: 250px;
+    background-color: #fafafa;
+  }
+  
+  .previewImage {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+  
+  /* Buttons */
+  .formActions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .addButton {
+    padding: 8px 16px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .cancelButton {
+    padding: 8px 16px;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .cancelButton:hover {
+    background-color: #bbb;
+  }
+  
+  /* Inputs */
+.formCol input[type="text"],
+.formCol input[type="number"],
+.formCol input[type="file"] {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.formCol input[type="text"]:focus,
+.formCol input[type="number"]:focus,
+.formCol input[type="file"]:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 5px rgba(0, 112, 243, 0.3);
+}
+
+/* Buttons */
+.addButton,
+.cancelButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.addButton {
+  background-color: #0070f3;
+  color: #fff;
+}
+
+.addButton:hover {
+  background-color: #005bb5;
+}
+
+.cancelButton {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.cancelButton:hover {
+  background-color: #e0e0e0;
+}
+
+/* Right column - image preview */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+
+  /* Close button */
+/* Modal overlay */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal content box */
+  .modalContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 900px;
+    position: relative; /* ✅ important for close button positioning */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  
+  /* Close button */
+  .closeButton {
+    position: absolute; /* ✅ relative to modalContent */
+    top: 10px;
+    right: 10px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 10;
+  }
+/* Modal content box */
+.modalContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 590px;
+    position: relative; /* ✅ important for close button positioning */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+    
+
+  .addNewButton {
+    background-color: #0070f3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  .addNewButton:hover { background-color: #005bb5; }
+  
+  .formRow {
+    display: flex;
+    gap: 20px;
+    flex-wrap: inherit;
+  }
+  
+  .formCol { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+  
+
+  
+  .noPreview { font-style: italic; color: #888; text-align: center; }
+  
+  .formActions { display: flex; gap: 10px; margin-top: 10px; }
+  
+  .addButton { background-color: #0070f3; color: #fff; border: none; padding: 10px; border-radius: 8px; cursor: pointer; }
+  .addButton:hover { background-color: #005bb5; }
+  
+  .cancelButton { background-color: #f5f5f5; color: #333; border: none; padding: 10px; border-radius: 8px; cursor: pointer; }
+  .cancelButton:hover { background-color: #e0e0e0; }
+  
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 5px;
+  }
+  
+  .pageButton {
+    padding: 6px 12px;
+    border: 1px solid #1976d2;
+    background-color: white;
+    color: #1976d2;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .pageButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .activePage {
+    background-color: #1976d2;
+    color: white;
+  }
+  
