@@ -1,9 +1,14 @@
 # Auto-Parts-Inventory-Ordering-System
 ## HOW TO RUN THIS PROJECT
-Make sure Nodejs  is installed on the server or machine. Import the mysql database `auto_parts_db`.
+Make sure Nodejs  is installed on the server or machine. 
+Import the mysql database `auto_parts_db`.
+
 Run backend server:  C:\xampp\htdocs\auto-parts\backend> npm run dev 
+
 Run frontend sever: C:\xampp\htdocs\auto-parts\frontend> npm run dev
+
 Then browse http://localhost:3000/
+
 http://localhost:3000/dashboard - to get into admin panel dashboard
 
 
